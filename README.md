@@ -1,4 +1,4 @@
-{project_name}
+IHE Pharmacy Vaccination
 ---
 This is the Implementation Guide for IHE PHarmacy Vaccination profile
 <br> </br>
