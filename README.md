@@ -1,6 +1,6 @@
 {project_name}
 ---
-This is the Implementation Guide for {project_name} by {organization_name}
+This is the Implementation Guide for IHE PHarmacy Vaccination profile
 <br> </br>
 ###
 ### Publication
@@ -14,6 +14,6 @@ Canonical / permanent URL: __http://build.fhir.org/ig/IHE/pharm-vaccination/__
 Issues and change requests are managed here:  
 
 Issues:  __https://github.com/IHE/pharm-vaccination/issues__  
-Kanban board:  __https://github.com/projects/IHE/pharm-vaccination/1__  
+Kanban board:  __https://github.com/IHE/pharm-vaccination/projects/1__  
 
 ---
