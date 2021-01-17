@@ -50,6 +50,11 @@
         <nameUrl value="index.html"/>
         <title value="MyIG Home Page"/>
         <generation value="html"/>
+        <page>
+          <nameUrl value="usecases.html"/>
+          <title value="Use Cases"/>
+          <generation value="markdown"/>
+        </page>
       </page>
       <page>
         <nameUrl value="downloads.html"/>
