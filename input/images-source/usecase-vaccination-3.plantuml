@@ -1,0 +1,54 @@
+@startuml
+title Use Case 3  -  Immunization with adverse event
+skinparam actorStyle awesome
+!pragma teoz true
+hide footbox
+
+!include ./style.iuml
+
+actor "**Patient**\n" as P
+actor "**Nurse**\n" as N
+Participant "** Vaccination **\n**  Registration  **\n**    System    ** " as VS
+Participant "** Vaccination **\n**  Information **\n**   Consumer   **" as V
+
+group Identification
+P -[#A92]-> VS : Identification / authorization
+end
+...
+
+group Register Vaccination
+N --> VS : Register vaccine administration
+activate VS
+deactivate VS
+end
+deactivate VS
+...
+|||
+
+group Register Adverse Event
+N -> VS : Lookup patient
+activate VS
+
+group Obtain patient's Vaccination information
+VS -> V : Query for patient's Vaccination information
+activate VS
+activate V
+VS <- V : **Return patient's Vaccination information**
+deactivate V
+deactivate VS
+end
+...
+
+group Update patient's Vaccination information
+VS -> V : Update Vaccination information\nwith Adverse Event
+activate VS
+activate V
+end
+deactivate VS
+deactivate V
+...
+
+
+
+
+@enduml
