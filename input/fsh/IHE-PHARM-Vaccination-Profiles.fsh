@@ -1,21 +1,22 @@
 
-CodeSystem:  IHE_PHARM_CSVaccinationConfirmationStatus
-Id: ihe-pharm-cs-vaccination-confirmation-status
-//Usage: #definition
-Title: "vaccination status Code System."
-Description:  "vaccination status Code System."
-* #unconfirmed "unconfirmed"
-* #confirmed "confirmed"
-* #other "other"
 
 
-ValueSet: IHE_Pharm_VSVaccinationConfirmationStatus
-//Usage: #definition
-Id: ihe-pharm-vs-vaccination-confirmation-status
-Title: "Vaccination status Value Set"
-Description:  "Vaccination status Value Set"
-* ^status = #draft
-* codes from system IHE_PHARM_CSVaccinationConfirmationStatus
+Profile:        IHE_PHARM_VaccineMedication
+Parent:         Medication
+Id:             ihe-pharm-vaccine-medication
+Title:          "IHE-PHARM-Medication-Vaccine"
+Description:    """ 
+    A vaccine product."""
+
+* extension contains IHE_PHARM_MedicationCategory named medication-category 0..*
+
+Extension: IHE_PHARM_MedicationCategory
+Id: ihe-pharm-ext-medication-category
+Title: "Medication category or class"
+Description: "A medication's classification or category / type."
+* value[x] only CodeableConcept
+
+
 
 
 Profile:        IHE_PHARM_Vaccination
@@ -61,7 +62,6 @@ Description:    """
 * extension contains IHE_PHARM_VaccinationOriginalOrder named vaccination-originalorder 0..1
 * extension contains IHE_PHARM_AdministeredProduct named administeredProduct 0..1
 * extension contains IHE_PHARM_VaccinationLocation named vaccination-location 0..1
-* extension contains IHE_PHARM_VaccinationConfirmationStatus named vaccination-confirmationStatus 0..1
 * route from http://hl7.org/fhir/ValueSet/immunization-status-reason
 //* statusReason from be-vs-vaccination-status-reason (required)
 
@@ -89,14 +89,7 @@ Id: ihe-pharm-ext-administeredProduct
 Title: "Product administered"
 Description: "The actual product administered, when one must be specified in detail"
 * value[x] only Reference
-* valueReference only Reference(Medication)
-
-Extension: IHE_PHARM_VaccinationConfirmationStatus
-Id: ihe-pharm-ext-vaccination-confirmationStatus
-Title: "How certain is the vaccination information - confirmed, not confirmed"
-Description: "How certain/reliable is the vaccination information"
-* value[x] only code
-* valueCode from ihe-pharm-vs-vaccination-confirmation-status (required)
+* valueReference only Reference(IHE_PHARM_VaccineMedication)
 
 
 
