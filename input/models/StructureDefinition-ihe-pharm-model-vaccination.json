@@ -1,0 +1,307 @@
+{
+    "resourceType": "StructureDefinition",
+    "id": "ihe-pharm-model-medication-record",
+    "url": "http://ihe.net/fhir/ihe-pharm-model-medication-record",
+    "version": "1.0.0",
+    "name": "IHEPharmModelMedicationRecord",
+    "status": "draft",
+    "date": "2021-01-07",
+    "publisher": "IHE Pharmacy",
+    "contact": [
+        {
+            "telecom": [
+                {
+                    "system": "url",
+                    "value": "http://ihe.net"
+                }
+            ]
+        }
+    ],
+    "description": "The Logical Data Model for a patient's Medication Record - detailed or summary",
+    "jurisdiction": [
+        {
+            "coding": [
+                {
+                    "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+                    "code": "1"
+                }
+            ]
+        }
+    ],
+    "fhirVersion": "4.0.1",
+    "kind": "logical",
+    "abstract": false,
+    "type": "VaccinationRecord",
+    "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+    "derivation": "specialization",
+    "differential": {
+        "element": [
+            {
+                "id": "VaccinationRecord.identifier",
+                "path": "VaccinationRecord.identifier",
+                "short": "The immunization event identifier",
+                "definition": "The immunization event identifier",
+                "min": "0",
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Identifier"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.status",
+                "path": "VaccinationRecord.status",
+                "short": "status of immunization",
+                "definition": "status of immunization",
+                "min": "1",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "code"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.statusReason",
+                "path": "VaccinationRecord.statusReason",
+                "short": "The reason for the assertion of the status",
+                "definition": "The reason for the assertion of the status",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "CodeableConcept"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.patient",
+                "path": "VaccinationRecord.patient",
+                "short": "The patient that the immunization event refers to",
+                "definition": "The patient that the immunization event refers to",
+                "min": "1",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.vaccineCode",
+                "path": "VaccinationRecord.vaccineCode",
+                "short": "The code of the vaccine type, representing the disease(s) covered",
+                "definition": "The code of the vaccine type, representing the disease(s) covered",
+                "min": "1",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "CodeableConcept"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.vaccinationDate",
+                "path": "VaccinationRecord.vaccinationDate",
+                "short": "The date and time of the vaccination event",
+                "definition": "The date and time of the vaccination event",
+                "min": "1",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "dateTime"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.vaccinationLocation",
+                "path": "VaccinationRecord.vaccinationLocation",
+                "short": "The location where the vaccination took place",
+                "definition": "The location where the vaccination took place",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.vaccinationRequest",
+                "path": "VaccinationRecord.vaccinationRequest",
+                "short": "The order that triggered the vaccination",
+                "definition": "The order that triggered the vaccination",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.protocol",
+                "path": "VaccinationRecord.protocol",
+                "short": "The protocol that is being applied with the vaccination",
+                "definition": "The protocol that is being applied with the vaccination",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.sequence[x]",
+                "path": "VaccinationRecord.sequence[x]",
+                "short": "The sequence number of the vaccine, e.g. first dose, reinforcement…",
+                "definition": "The sequence number of the vaccine, e.g. first dose, reinforcement…",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "integer"
+                    },
+                    {
+                        "code": "string"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.recorder",
+                "path": "VaccinationRecord.recorder",
+                "short": "The person that recorded the immunization event",
+                "definition": "The person that recorded the immunization event",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.recordedDateTime",
+                "path": "VaccinationRecord.recordedDateTime",
+                "short": "The date and time when the immunization was recorded",
+                "definition": "The date and time when the immunization took place",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "dateTime"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.performer",
+                "path": "VaccinationRecord.performer",
+                "short": "The person that actually performed the vaccination",
+                "definition": "The person that actually performed the vaccination",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.route",
+                "path": "VaccinationRecord.route",
+                "short": "The route of administration",
+                "definition": "The route of administration",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "CodeableConcept"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.administeredProduct",
+                "path": "VaccinationRecord.administeredProduct",
+                "short": "The product administered",
+                "definition": "A reference or code of the product administered - typically a brand product code, or a reference to a product e.g. in a catalog or inventory.",
+                "min": "0",
+                "max": "*",
+                "type": [
+                    {
+                        "code": "BackboneElement"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.administeredProduct.product[x]",
+                "path": "VaccinationRecord.administeredProduct.product[x]",
+                "short": "A reference or code of the product administered",
+                "definition": "A reference or code of the product administered",
+                "min": "1",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "CodeableConcept"
+                    },
+                    {
+                        "code": "Reference"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.administeredProduct.lotNumber",
+                "path": "VaccinationRecord.administeredProduct.lotNumber",
+                "short": "The lot number of the product administered",
+                "definition": "The lot number of the product administered",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Identifier"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.administeredProduct.expirationDate",
+                "path": "VaccinationRecord.administeredProduct.expirationDate",
+                "short": "The expiration date of the product administered",
+                "definition": "The expiration date of the product administered",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "dateTime"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.administeredProduct.serialNumber",
+                "path": "VaccinationRecord.administeredProduct.serialNumber",
+                "short": "The serial number of the product administered",
+                "definition": "The serial number of the product administered",
+                "min": "0",
+                "max": "1",
+                "type": [
+                    {
+                        "code": "Identifier"
+                    }
+                ]
+            },
+            {
+                "id": "VaccinationRecord.note",
+                "path": "VaccinationRecord.note",
+                "short": "Additional notes",
+                "definition": "Additional notes",
+                "min": "0",
+                "max": "*",
+                "type": [
+                    {
+                        "code": "Annotation"
+                    }
+                ]
+            }
+        ]
+    }
+}
