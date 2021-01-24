@@ -1,0 +1,37 @@
+@startuml
+title Use Case 1 - Single Vaccination event\n
+skinparam actorStyle awesome
+
+hide footbox
+
+!include ./style.iuml
+
+actor "**Patient**" as P
+actor "**Nurse**" as N
+Participant "** Vaccination **\n**  Registration  **\n**    System    ** " as VS
+Participant "** Vaccination **\n**  Information **\n**   Consumer   **" as V
+
+group Identification
+P -[#A92]-> VS : Identification / authorization
+end
+...
+
+group Register Vaccination
+N --> VS : Register vaccine administration
+activate VS
+deactivate VS
+
+end
+...
+
+group Query Vaccination information
+VS -> V : Query for patient's Vaccination information
+activate VS
+activate V
+VS <- V : **Return patient's Vaccination information**
+deactivate V
+deactivate VS
+end
+
+
+@enduml
