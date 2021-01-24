@@ -63,12 +63,7 @@ Description:    """
 * extension contains IHE_PHARM_AdministeredProduct named administeredProduct 0..1
 * extension contains IHE_PHARM_VaccinationLocation named vaccination-location 0..1
 * route from http://hl7.org/fhir/ValueSet/immunization-status-reason
-//* statusReason from be-vs-vaccination-status-reason (required)
 
-// Add extension: recordedString
-// Add extension: type
-
-// added 09-06
 * reasonCode MS
 * reasonCode ^short = "Why vaccination has occurred or not (code or text)"
 * reasonReference MS
