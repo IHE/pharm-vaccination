@@ -3,7 +3,7 @@
     "id": "ihe-pharm-model-vaccination",
     "url": "http://ihe.net/fhir/ihe-pharm-model-vaccination",
     "version": "1.0.0",
-    "name": "IHEPharmModelMedicationRecord",
+    "name": "IHEPharmModelVaccination",
     "status": "draft",
     "date": "2021-01-07",
     "publisher": "IHE Pharmacy",
@@ -17,7 +17,7 @@
             ]
         }
     ],
-    "description": "The Logical Data Model for a patient's Medication Record - detailed or summary",
+    "description": "The Logical Data Model for a vaccination event",
     "jurisdiction": [
         {
             "coding": [
