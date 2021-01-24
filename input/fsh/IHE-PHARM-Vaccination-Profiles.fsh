@@ -18,7 +18,6 @@ Description: "A medication's classification or category / type."
 
 
 
-
 Profile:        IHE_PHARM_Vaccination
 Parent:         Immunization
 Id:             ihe-pharm-vaccination
