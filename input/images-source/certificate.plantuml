@@ -1,0 +1,86 @@
+@startuml
+'skinparam linetype polyline
+'skinparam linetype ortho
+hide circle
+hide stereotype
+!pragma graphviz_dot smetana
+
+skinparam class<<AS>> {
+ BorderColor DarkRed
+ BackgroundColor MistyRose
+ HeaderBackgroundColor #f09090
+}
+skinparam class<<MD>> {
+ BorderColor DarkSlateGray
+ BackgroundColor WhiteSmoke
+ HeaderBackgroundColor #909090
+}
+skinparam class<<FL>> {
+ BorderColor #b07050
+ BackgroundColor BUSINESS
+ HeaderBackgroundColor #f2f295
+}
+
+skinparam class<<TM>> {
+ BorderColor #505090
+ BackgroundColor APPLICATION
+ HeaderBackgroundColor SkyBlue
+}
+
+skinparam class<<TL>> {
+ BorderColor DarkGreen
+ BackgroundColor PHYSICAL
+ HeaderBackgroundColor LimeGreen
+}
+
+
+package "Immunity / Immunization\ninformation" as Imm {
+'  package "Monthly Case Report" as MonthlyReport {
+    class "**   Vaccination   **\n**   Exemption   **" as Ex<<MD>> {
+    }
+    class "**   Immunity   **\n**   Assessment   **" as IAS<<MD>> {
+    }
+    class "**  Immunization  **\n**  Record  **" as IR<<TL>> {
+        Report
+        |_ Identifier
+        |_ Patient
+        |_ Disease code
+        |_ Product details
+        |_ Date/Location
+        |_ ...
+        --
+        QuestionnaireResponse
+        }
+  }
+
+  
+  package "Immunization Certificate" as IC {
+    class "**Standardized**\n** Case **\n**Report**" as Cert<<TL>> {
+        Report
+        |_ Identification
+        |_ Patient  
+        |_ Validity
+        |_ Emmitter
+        |_ ...
+        --
+    }
+    
+   
+
+'  }  
+
+  Ex -down[hidden]-> IR
+  IR -right-> Cert : "             "
+  IR -down[hidden]-> IAS
+
+  Ex ..> Cert
+  IAS ..> Cert
+  IR -right[hidden]-> Cert : "             "
+'  Imm --> IC : "                                 "
+  
+caption
+Immunization
+endcaption
+
+
+@enduml

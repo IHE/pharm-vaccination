@@ -9,10 +9,10 @@
   <!-- This version will propagate to all artifacts unless the "propagate-version" extension is overridden -->
   <version value="0.1.0-test"/>
   <name value="IHE_PHARM_Vaccination"/>
-  <title value="Your User Friendly Name for MyIG Here"/>
+  <title value="IHE Pharmacy - Vaccination Record"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <publisher value="Pharmacy"/>
+  <publisher value="IHE Pharmacy"/>
   <contact>
     <telecom>
       <!-- Or whatever URL and/or email address(es) are appropriate -->
@@ -20,7 +20,7 @@
       <value value="http://ihe.net"/>
     </telecom>
   </contact>
-  <description value="A brief description of what this IG is about "/>
+  <description value="This is the IHE Profile for vaccination"/>
   <jurisdiction>
     <!-- This will drive SNOMED release used -->
     <coding>
