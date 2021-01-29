@@ -4,6 +4,7 @@
     "url": "http://ihe.net/fhir/ihe-pharm-model-vaccination",
     "version": "1.0.0",
     "name": "IHEPharmModelVaccination",
+    "title": "IHE Pharm - Logical Model - Vaccination",
     "status": "draft",
     "date": "2021-01-07",
     "publisher": "IHE Pharmacy",
