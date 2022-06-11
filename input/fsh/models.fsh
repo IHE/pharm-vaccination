@@ -1,0 +1,37 @@
+Logical: IHEPharmModelMedicationRecord
+Parent: Element
+Id: ihe-pharm-model-vaccination
+Description: "The Logical Data Model for a patient's Medication Record - detailed or summary"
+* ^url = "http://profiles.ihe.net/fhir/ihe-pharm-model-vaccination"
+* ^version = "1.0.0"
+* ^status = #draft
+* ^date = "2021-01-07"
+* ^publisher = "IHE Pharmacy"
+* ^contact.telecom.system = #url
+* ^contact.telecom.value = "http://ihe.net"
+* ^jurisdiction.coding.system = "http://unstats.un.org/unsd/methods/m49/m49.htm"
+* ^jurisdiction.coding.code = #1
+* ^type = "Vaccination"
+* . ^short = "The immunization event"
+* . ^definition = "The immunization event"
+* identifier 0..* BackboneElement "The immunization event identifier" "The immunization event identifier"
+* status 1..1 code "status of immunization" "status of immunization"
+* statusReason 0..1 CodeableConcept "The reason for the assertion of the status" "The reason for the assertion of the status"
+* patient 1..1 Reference "The patient that the immunization event refers to" "The patient that the immunization event refers to"
+* vaccineCode 1..1 CodeableConcept "The code of the vaccine type, representing the disease(s) covered" "The code of the vaccine type, representing the disease(s) covered"
+* vaccinationDate 1..1 dateTime "The date and time of the vaccination event" "The date and time of the vaccination event"
+* vaccinationLocation 0..1 Reference "The location where the vaccination took place" "The location where the vaccination took place"
+* vaccinationRequest 0..1 Reference "The order that triggered the vaccination" "The order that triggered the vaccination"
+* protocol 0..1 Reference "The protocol that is being applied with the vaccination" "The protocol that is being applied with the vaccination"
+* sequence[x] 0..1 integer or string "The sequence number of the vaccine, e.g. first dose, reinforcement..." "The sequence number of the vaccine, e.g. first dose, reinforcement…"
+* recorder 0..1 Reference "The person that recorded the immunization event" "The person that recorded the immunization event"
+* recordedDateTime 0..1 dateTime "The date and time when the immunization was recorded" "The date and time when the immunization took place"
+* performer 0..1 Reference "The person that actually performed the vaccination" "The person that actually performed the vaccination"
+* route 0..1 CodeableConcept "The route of administration" "The route of administration"
+* administeredProduct 0..* BackboneElement "The product administered" "A reference or code of the product administered - typically a brand product code, or a reference to a product e.g. in a catalog or inventory."
+  * product[x] 1..1 CodeableConcept or Reference "A reference or code of the product administered" "A reference or code of the product administered"
+  * productCategory 0..1 CodeableConcept "A category of the vaccine, e.g. modified RNA, attenuated virus…" "A reference or code of the product administered"
+  * lotNumber 0..1 Identifier "The lot number of the product administered" "The lot number of the product administered"
+  * expirationDate 0..1 dateTime "The expiration date of the product administered" "The expiration date of the product administered"
+  * serialNumber 0..1 Identifier "The serial number of the product administered" "The serial number of the product administered"
+* note 0..* Annotation "Additional notes" "Additional notes"
